@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Health Event - [Company Name]</title>
+    <!-- Google Fonts: Inter for a clean, modern medical UI -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* COLOR THEME (Professional, Trustworthy, Energetic) */
+        :root {
+            --primary-color: #0d9488;    /* Teal: Health & Calmness */
+            --primary-dark: #0f766e;     /* Darker Teal for hover */
+            --secondary-bg: #f0fdfa;     /* Very Light Teal Background */
+            --accent-color: #f97316;     /* Vibrant Orange: Call to Action */
+            --accent-dark: #ea580c;      /* Darker Orange for CTA hover */
+            
+            --text-dark: #0f172a;        /* Near Black for headings */
+            --text-light: #475569;       /* Slate Grey for body text */
+            --white: #ffffff;
+            --border-radius: 12px;
+        }
+
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        /* LOGO IMAGE STYLING */
+        .logo-img {
+            height: 45px; /* Adjust logo height */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .company-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 3rem;
+        }
+
+        /* Left Side: Event Details */
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .badge {
+            background: var(--secondary-bg);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccfbf1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .hero-content p.subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        /* Enhanced Event Info Box */
+        .event-info-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            margin-bottom: 2.5rem;
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .info-text strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .info-text span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Call To Action Buttons */
+        .cta-btn {
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+        }
+
+        /* ACCENT COLOR FOR MAIN CTA */
+        .btn-primary {
+            background-color: var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Teal button for Nav */
+        .btn-secondary {
+            background-color: var(--primary-color);
+            font-size: 0.95rem;
+            padding: 0.7rem 1.8rem;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Right Side: Boss Profile Card */
+        .hero-profile {
+            flex: 0.8;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.08);
+            border-top: 6px solid var(--primary-color);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .profile-img {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--secondary-bg);
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero-profile h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-profile .role {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-profile .bio {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        /* Responsive Design (Mobile & Tablet) */
+        @media (max-width: 991px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 1rem 3%;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 5%;
+                gap: 2rem;
+            }
+
+            .company-name { display: none; } /* Hide name on mobile, show logo only */
+
+            .hero-content p.subtitle {
+                margin: 0 auto 2rem;
+            }
+
+            .event-info-box {
+                grid-template-columns: 1fr;
+                text-align: left;
+                padding: 1.5rem;
+            }
+
+            .hero-profile {
+                width: 100%;
+                max-width: 500px;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- LOGO IMAGE & COMPANY NAME -->
+        <a href="#" class="logo-container">
+            <!-- Replace 'logo.png' with your actual logo image path -->
+            <img src="https://cdn.shopify.com/s/files/1/0989/4215/7102/files/livology_6940a164-6858-4ba5-80e7-1379f4b33e71.png?v=1778080029" alt="Company Logo" class="logo-img">
+            
+        </a>
+        <a href="#book-now" class="cta-btn btn-secondary">Book Now</a>
+    </header>
+
+    <section class="hero">
+        <!-- Left Side: Details & CTA -->
+        <div class="hero-content">
+            <div class="badge">AWARENESS DRIVE</div>
+            <h1>Prioritize Your Liver Health: Exclusive Screening Event</h1>
+            <p class="subtitle">Join Dr. Nilesh Morey for a comprehensive liver function test and a personalized guidance session to help you build a healthier lifestyle.</p>
+            
+            <!-- Grid-based Event Info Box -->
+            <div class="event-info-box">
+                <div class="info-item">
+                    <div class="info-icon">📅</div>
+                    <div class="info-text">
+                        <strong>Date</strong>
+                        <span>Sunday, May 24, 2026</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-text">
+                        <strong>Time</strong>
+                        <span>10:00 AM Onwards</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <strong>Venue</strong>
+                        <span>Health Care Center, [City]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main CTA Button with Accent Color -->
+            <button class="cta-btn btn-primary" onclick="openBookingForm()" id="book-now">Book Your Free Spot Now</button>
+            <p style="margin-top: 1.2rem; font-size: 0.9rem; color: var(--text-light); font-weight: 500;">
+                <span style="color: var(--accent-color);">●</span> Only 25 spots remaining for the personalized session.
+            </p>
+        </div>
+
+        <!-- Right Side: Profile Card -->
+        <div class="hero-profile">
+            <!-- CRITICAL: Ensure the uploaded photo is completely natural and unedited. Absolutely NO AI face smoothing, filtering, or beautification per strict design guidelines. -->
+            <img src="https://cdn.shopify.com/s/files/1/0989/4215/7102/files/Dr_Nilesh_Morey.png?v=1778164958" alt="Dr. [Boss's Name]" class="profile-img">
+            <h3>Dr. Nilesh Morey</h3>
+            <p class="role">Senior Liver Health Expert</p>
+            <p class="bio">With over 15 years of clinical experience, Dr. Morey specializes in metabolic health, fatty liver reversal, and sustainable lifestyle modifications.</p>
+        </div>
+    </section>
+
+    <!-- Basic JS -->
+    <script>
+        // Placeholder for the booking action
+        function openBookingForm() {
+            // Your form link or modal logic here
+            // window.location.href = "YOUR_FORM_LINK";
+            alert("Booking link will open here! Customize the openBookingForm() function in JS.");
+        }
+    </script>
+</body>
+</html>
